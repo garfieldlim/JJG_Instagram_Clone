@@ -31,7 +31,7 @@ class App extends StatelessWidget {
       ),
       themeMode: ThemeMode.dark,
       debugShowCheckedModeBanner: false,
-      home: LoginView(),
+      home: const LoginView(),
     );
   }
 }
