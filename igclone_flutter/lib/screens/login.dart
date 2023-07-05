@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:igclone_flutter/screens/home.dart';
+import 'package:igclone_flutter/state/auth/backend/authenticator.dart';
+import 'dart:developer' as devtools show log;
+
+extension Log on Object {
+  void log() => devtools.log(toString());
+}
 
 class LoginView extends ConsumerWidget {
   const LoginView({Key? key}) : super(key: key);
@@ -51,10 +57,13 @@ class LoginView extends ConsumerWidget {
                   ),
                 ),
                 // onPressed navigator push MainView from home.dart
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => MainView()));
+                onPressed: () async {
+                  final result = await Authenticator().loginWithFacebook();
+                  result.log();
                 },
+                //   Navigator.push(context,
+                //       MaterialPageRoute(builder: (context) => MainView()));
+                // },
                 child: Text(
                   'Facebook',
                   style: TextStyle(color: Colors.white),
@@ -71,7 +80,10 @@ class LoginView extends ConsumerWidget {
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () async {
+                  final result = await Authenticator().loginWithGoogle();
+                  result.log();
+                },
                 child: Text(
                   'Google',
                   style: TextStyle(color: Colors.white),

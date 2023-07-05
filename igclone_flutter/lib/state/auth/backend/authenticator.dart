@@ -36,7 +36,7 @@ class Authenticator {
     } on FirebaseAuthException catch (e) {
       final email = e.email;
       final credential = e.credential;
-      if (e.code == Constants.accountExistsWithDifferentCredential &&
+      if (e.code == Constants.accountExistsWithDifferentCredentialsError &&
           email != null &&
           credential != null) {
         final providers =
