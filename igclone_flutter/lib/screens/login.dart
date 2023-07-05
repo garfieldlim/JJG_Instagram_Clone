@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:igclone_flutter/screens/home.dart';
 
 class LoginView extends ConsumerWidget {
   const LoginView({Key? key}) : super(key: key);
@@ -49,7 +50,11 @@ class LoginView extends ConsumerWidget {
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                 ),
-                onPressed: () {},
+                // onPressed navigator push MainView from home.dart
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => MainView()));
+                },
                 child: Text(
                   'Facebook',
                   style: TextStyle(color: Colors.white),
