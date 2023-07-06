@@ -3,7 +3,7 @@ import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 import '../../posts/typedefs/user_id.dart';
-import '../constants/constants.dart';
+import '../../constants/constants.dart';
 import '../models/auth_result.dart';
 
 class Authenticator {

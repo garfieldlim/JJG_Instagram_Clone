@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:igclone_flutter/screens/home.dart';
-import 'package:igclone_flutter/state/auth/backend/authenticator.dart';
+
 import 'dart:developer' as devtools show log;
+
+import '../state/auth/providers/auth_state_provider.dart';
 
 extension Log on Object {
   void log() => devtools.log(toString());
@@ -32,7 +33,7 @@ class LoginView extends ConsumerWidget {
               Center(
                 child: Text(
                   'Welcome to Instagram Clone',
-                  style: Theme.of(context).textTheme.headline4,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
               ),
               const SizedBox(
@@ -57,13 +58,8 @@ class LoginView extends ConsumerWidget {
                   ),
                 ),
                 // onPressed navigator push MainView from home.dart
-                onPressed: () async {
-                  final result = await Authenticator().loginWithFacebook();
-                  result.log();
-                },
-                //   Navigator.push(context,
-                //       MaterialPageRoute(builder: (context) => MainView()));
-                // },
+                onPressed:
+                    ref.read(authStateProvider.notifier).loginWithFacebook,
                 child: Text(
                   'Facebook',
                   style: TextStyle(color: Colors.white),
@@ -80,10 +76,7 @@ class LoginView extends ConsumerWidget {
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                 ),
-                onPressed: () async {
-                  final result = await Authenticator().loginWithGoogle();
-                  result.log();
-                },
+                onPressed: ref.read(authStateProvider.notifier).loginWithGoogle,
                 child: Text(
                   'Google',
                   style: TextStyle(color: Colors.white),

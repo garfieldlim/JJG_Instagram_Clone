@@ -51,8 +51,8 @@ android {
         applicationId "com.example.igclone_flutter"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
-        minSdkVersion 19
-        targetSdkVersion flutter.targetSdkVersion
+        minSdkVersion 21
+        targetSdkVersion 33
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         multiDexEnabled true
@@ -63,6 +63,8 @@ android {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig signingConfigs.debug
+            minifyEnabled true
+           
         }
     }
 }
@@ -75,6 +77,11 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.facebook.android:facebook-android-sdk:latest.release'
     implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.google.android.gms:play-services-auth:19.2.0'
+    implementation 'com.facebook.android:facebook-login:12.2.0'
+    implementation 'com.google.firebase:firebase-auth:21.0.1'
+
+
 }
 android {                                                                                                                                                  
    defaultConfig {                                                                                                                                          

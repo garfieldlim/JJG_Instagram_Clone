@@ -2,7 +2,7 @@ import 'dart:collection';
 
 import 'package:flutter/foundation.dart' show immutable;
 
-import '../../auth/constants/firebase_field_name.dart';
+import '../../constants/firebase_field_name.dart';
 import '../../posts/typedefs/user_id.dart';
 
 @immutable
