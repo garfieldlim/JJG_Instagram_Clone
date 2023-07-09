@@ -52,12 +52,12 @@ class App extends ConsumerWidget {
               }
             },
           );
-          // final isLoggedIn = ref.watch(isLoggedInProvider);
-          // if (isLoggedIn) {
-          return const MainView();
-          // } else {
-          //   return const LoginView();
-          // }
+          final isLoggedIn = ref.watch(isLoggedInProvider);
+          if (isLoggedIn) {
+            return const MainView();
+          } else {
+            return const LoginView();
+          }
         },
       ),
     );
