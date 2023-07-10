@@ -29,10 +29,35 @@ class _MainViewState extends ConsumerState<MainView> {
           ),
           actions: [
             IconButton(
-                icon: const FaIcon(
-                  FontAwesomeIcons.film,
-                ),
-                onPressed: () {}),
+              icon: const FaIcon(
+                FontAwesomeIcons.film,
+              ),
+              onPressed: () async {
+                // pick a video first
+                final videoFile =
+                    await ImagePickerHelper.pickVideoFromGallery();
+                if (videoFile == null) {
+                  return;
+                }
+
+                // reset the postSettingProvider
+                ref.refresh(postSettingProvider);
+
+                // go to the screen to create a new post
+                if (!mounted) {
+                  return;
+                }
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => CreateNewPostView(
+                      fileType: FileType.video,
+                      fileToPost: videoFile,
+                    ),
+                  ),
+                );
+              },
+            ),
             IconButton(
               icon: const Icon(
                 Icons.add_photo_alternate_outlined,
