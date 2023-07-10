@@ -1,6 +1,8 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:igclone_flutter/state/auth/providers/auth_state_provider.dart';
+import 'package:igclone_flutter/views/tabs/users_posts/user_posts_view.dart';
 
 class MainView extends ConsumerStatefulWidget {
   const MainView({Key? key}) : super(key: key);
@@ -32,7 +34,9 @@ class _MainViewState extends ConsumerState<MainView> {
               onPressed: () {},
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () async {
+                await ref.read(authStateProvider.notifier).logOut();
+              },
               icon: const Icon(
                 Icons.logout,
               ),
@@ -58,6 +62,11 @@ class _MainViewState extends ConsumerState<MainView> {
             ],
           ),
         ),
+        body: const TabBarView(children: [
+          UserPostsView(),
+          UserPostsView(),
+          UserPostsView(),
+        ]),
       ),
     );
   }

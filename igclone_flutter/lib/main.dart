@@ -1,12 +1,12 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:igclone_flutter/screens/home.dart';
-import 'package:igclone_flutter/screens/login.dart';
+import 'package:igclone_flutter/views/main/main_view.dart';
+import 'package:igclone_flutter/views/login/login_view.dart';
 import 'package:igclone_flutter/state/auth/providers/is_logged_in_provider.dart';
 
 import 'firebase_options.dart';
-import 'state/auth/providers/is_loading_provider.dart';
+import 'state/providers/is_loading_provider.dart';
 import 'views/components/loading/loading_screen.dart';
 
 void main() async {
