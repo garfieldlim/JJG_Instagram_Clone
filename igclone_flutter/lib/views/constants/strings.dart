@@ -12,6 +12,8 @@ class Strings {
       'Enter your search term in order to get started. You can search in the description of all posts avaialable in the system';
   static const logIntoYourAccount =
       'Log into your account using one of the options below.';
+  static const createNewPost = 'Create New Post';
+  static const pleaseWriteYourMessageHere = 'Please write your message here';
 
   const Strings._();
 }
