@@ -18,6 +18,9 @@ class Strings {
   static const noCommentsYet =
       'Nobody has commented on this post yet. You can change that though, and be the first person who comments!';
   static const writeYourCommentHere = 'Write your comment here...';
+  static const postDetails = 'Post Details';
+  static const checkOutThisPost = 'Check out this post!';
+  static const post = 'post';
 
   const Strings._();
 }

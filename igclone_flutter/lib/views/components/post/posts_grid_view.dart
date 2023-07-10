@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:igclone_flutter/state/posts/models/post.dart';
-import 'package:igclone_flutter/views/post_comments/post_comments_view.dart';
+import 'package:igclone_flutter/views/post_details/post_details_view.dart';
 
 import 'post_thumbnail_view.dart';
 
@@ -30,8 +30,8 @@ class PostsGridView extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (_) => PostCommentsView(
-                  postId: post.userId,
+                builder: (context) => PostDetailsView(
+                  post: post,
                 ),
               ),
             );
