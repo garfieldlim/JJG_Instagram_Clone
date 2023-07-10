@@ -14,6 +14,10 @@ class Strings {
       'Log into your account using one of the options below.';
   static const createNewPost = 'Create New Post';
   static const pleaseWriteYourMessageHere = 'Please write your message here';
+  static const comments = 'Comments';
+  static const noCommentsYet =
+      'Nobody has commented on this post yet. You can change that though, and be the first person who comments!';
+  static const writeYourCommentHere = 'Write your comment here...';
 
   const Strings._();
 }
