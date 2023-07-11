@@ -8,6 +8,8 @@ import 'package:igclone_flutter/state/post_settings/providers/post_settings_prov
 import 'package:igclone_flutter/views/components/dialogs/alert_dialog_model.dart';
 import 'package:igclone_flutter/views/components/dialogs/logout_dialog.dart';
 import 'package:igclone_flutter/views/create_new_post/create_new_post_view.dart';
+import 'package:igclone_flutter/views/tabs/home/home_view.dart';
+import 'package:igclone_flutter/views/tabs/search/search_view.dart';
 import 'package:igclone_flutter/views/tabs/users_posts/user_posts_view.dart';
 
 class MainView extends ConsumerStatefulWidget {
@@ -125,8 +127,8 @@ class _MainViewState extends ConsumerState<MainView> {
         ),
         body: const TabBarView(children: [
           UserPostsView(),
-          UserPostsView(),
-          UserPostsView(),
+          SearchView(),
+          HomeView(),
         ]),
       ),
     );

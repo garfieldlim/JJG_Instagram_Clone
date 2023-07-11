@@ -21,6 +21,7 @@ class Strings {
   static const postDetails = 'Post Details';
   static const checkOutThisPost = 'Check out this post!';
   static const post = 'post';
+  static const enterYourSearchTermHere = 'Enter your search term here';
 
   const Strings._();
 }
