@@ -23,6 +23,7 @@ final specificPostWithCommentsProvider = StreamProvider.family
   void notify() {
     final localPost = post;
     if (localPost == null) {
+      controller.addError('Post deleted');
       return;
     }
 

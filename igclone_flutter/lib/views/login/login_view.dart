@@ -61,7 +61,7 @@ class LoginView extends ConsumerWidget {
                 // onPressed navigator push MainView from home.dart
                 onPressed:
                     ref.read(authStateProvider.notifier).loginWithFacebook,
-                child: Text(
+                child: const Text(
                   'Facebook',
                   style: TextStyle(color: Colors.white),
                 ),
@@ -72,13 +72,13 @@ class LoginView extends ConsumerWidget {
               TextButton(
                 style: TextButton.styleFrom(
                   padding: const EdgeInsets.all(20.0),
-                  backgroundColor: Color.fromARGB(255, 217, 101, 93),
+                  backgroundColor: const Color.fromARGB(255, 217, 101, 93),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                 ),
                 onPressed: ref.read(authStateProvider.notifier).loginWithGoogle,
-                child: Text(
+                child: const Text(
                   'Google',
                   style: TextStyle(color: Colors.white),
                 ),
