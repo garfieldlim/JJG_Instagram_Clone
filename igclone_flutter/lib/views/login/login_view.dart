@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:igclone_flutter/views/constants/strings.dart';
 
 import 'dart:developer' as devtools show log;
 
-import '../state/auth/providers/auth_state_provider.dart';
+import '../../state/auth/providers/auth_state_provider.dart';
 
 extension Log on Object {
   void log() => devtools.log(toString());
@@ -17,7 +18,7 @@ class LoginView extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Instagram Clone',
+          Strings.appName,
         ),
       ),
       body: Padding(
@@ -32,7 +33,7 @@ class LoginView extends ConsumerWidget {
               // header text
               Center(
                 child: Text(
-                  'Welcome to Instagram Clone',
+                  Strings.welcomeToAppName,
                   style: Theme.of(context).textTheme.headlineMedium,
                 ),
               ),
@@ -40,7 +41,7 @@ class LoginView extends ConsumerWidget {
                 height: 150,
               ),
               Text(
-                'Please log in to continue',
+                Strings.logIntoYourAccount,
                 style: Theme.of(context)
                     .textTheme
                     .titleMedium

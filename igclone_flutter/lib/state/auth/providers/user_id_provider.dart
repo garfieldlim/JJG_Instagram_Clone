@@ -3,5 +3,5 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../posts/typedefs/user_id.dart';
 import 'auth_state_provider.dart';
 
-final userIdprovider =
+final userIdProvider =
     Provider<UserId?>((ref) => ref.watch(authStateProvider).userId);
